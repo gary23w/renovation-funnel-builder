@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{{ name }}</title>
+      <!-- Primary Meta Tags -->
+      <meta name="title" content="{{ name }}" />
+      <meta name="description" content="{{ og_description }}" />
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="{{ homeWebsite }}" />
+      <meta property="og:title" content="{{ name }}" />
+      <meta property="og:description" content="{{ og_description }}" />
+      <meta property="og:image" content="{{ og_image }}" />
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="{{ homeWebsite }}" />
+      <meta property="twitter:title" content="{{ name }}" />
+      <meta property="twitter:description" content="{{ og_description }}" />
+      <meta property="twitter:image" content="{{ og_image }}" />
+      <!-- Favicon -->
+      <link
+        rel="icon"
+        type="image/png"
+        href="images/icons/gary23w.ico"
+        sizes="16x16"
+      />
+      <!-- PRE LOAD -->
+      <link rel="preload" href="{{ og_image }}" as="image" />
+      <!-- CSS and Scripts -->
+      <script src="src/scripts/jquery-3.6.0.min.js"></script>
+      <script src="src/scripts/app.js" defer></script>
+      <link rel="stylesheet" href="src/css/garydation.css" async/>
+      <!-- Inline fallback -->
+      {{ inlineCss }}
+    </head>
+  </head>
+  <body>
+    <header
+      class="top-bar"
+      data-responsive-toggle="responsive-menu"
+      data-hide-for="medium"
+    >
+      <div class="menu-toggle">
+        <div class="menu-wrapper">
+          <p class="menu-btn"></p>
+        </div>
+        <div class="logo-wrapper">
+          <a href="{{ homeWebsite }}">
+            <img
+              src="{{ companyLogo }}"
+              alt="Company Logo"
+              class="company-logo lazy-load"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="top-bar-left mobile-response">
+        <ul
+          class="dropdown vertical medium-horizontal menu list-menu"
+          data-dropdown-menu
+          id="responsive-menu"
+        >
+          <div class="items">
+            <li>
+              <a href="{{ homeWebsite }}">Website</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#reviews">Reviews</a>
+            </li>
+            <li>
+              <a href="#hero">Contact</a>
+            </li>
+            <li>
+              <a href="#privacyPolicyModal" class="privacyPolicyButton"
+              >Policies</a
+            >
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="top-bar-right hide-for-small-only">
+        <div class="logo-wrapper">
+          <a href="{{ homeWebsite }}">
+            <img
+              src="{{ companyLogo }}"
+              alt="Company Logo"
+              class="company-logo-desktop lazy-load"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="banner-section1">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="cell small-12">
+            <ul class="banner-notes">
+              <li>5/5 Rated Business.</li>
+              <li>No Hidden Fees.</li>
+              <li>Quick Response.</li>
+              <li>100% Guaranteed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero section with call-to-action -->
+    <section id="hero" class="hero-section">
+      <div class="flex-grid-auto grid-container hero-section-glass">
+        <div class="grid-x grid-margin-x align-middle">
+          <div class="cell small-12 medium-6">
+            <!-- Remove star rating, it is superfluous-->
+            <!-- <p class="top-rating">★★★★★ 5 star rating.</p> -->
+            <h1>{{ titleHero }}</h1>
+            <p class="subheader">{{ subTitleHero }}</p>
+            <ul class="no-bullet">
+              <li>Family owned business.</li>
+              <li>Established in 1979.</li>
+              <li>Fully Insured, Licensed, and Bonded.</li>
+              <li>10-year manufacturer's guarantee.</li>
+              <li>1-year workmanship warranty.</li>
+            </ul>
+            <!-- Review Box Replacing the First Quote Button -->
+            <div class="review-box">
+              <div class="cell small-12 medium-6 large-4">
+                <div class="review-item callout">
+                  <div class="grid-container">
+                    <div class="grid-x grid-margin-x align-top">
+                      <div class="cell small-12">
+                        <div class="rating-box">
+                          <p class="review-stars">{{ reviewHeroStars }}</p>
+                          <p class="review-rating">
+                            Rated {{ reviewHeroRating }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="review-highlight">"{{ reviewHeroDescription }}"</p>
+                  <p class="review-author">{{ reviewHeroName }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cell small-12 medium-6">
+            <!-- Form for free quotation -->
+            <div class="callout secondary">
+              <h2>{{ heroFormTitle }}</h2>
+              <form id="contact">
+                <div id="firstPart">
+                  <label>
+                    What type of property do you have?
+                    <select name="propertyType">
+                      <option value="residential">Residential</option>
+                      <option value="commercial">Commercial</option>
+                    </select>
+                  </label>
+                  <label>
+                    {{ heroFormQualify }}
+                    <select name="serviceType">
+                      <option value="full_replacement">Full Replacement</option>
+                      <option value="repair">Repair</option>
+                    </select>
+                  </label>
+                  <label>
+                    How soon do you need help?
+                    <select name="urgency">
+                      <option value="urgent">Urgent</option>
+                      <option value="no_rush">No Rush</option>
+                    </select>
+                  </label>
+                  <input
+                    type="button"
+                    class="button expanded nextPanel"
+                    value="Get My Free Quote"
+                  />
+                </div>
+                <!-- Hidden second part of the form -->
+                <div id="secondPart" class="hidden">
+                  <label
+                    >Your Name:
+                    <input type="text" name="name" required />
+                  </label>
+                  <label
+                    >Email:
+                    <input type="email" name="email" required />
+                  </label>
+                  <label
+                    >Phone Number:
+                    <input type="tel" name="phone" required />
+                  </label>
+                  <label
+                  >Location and or Address:
+                  <input type="text" name="location" required />
+                </label>
+                  <input
+                    type="button"
+                    class="button expanded sendData"
+                    value="Submit"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Banner Section -->
+    <section class="banner-section">
+      <!-- Grid Container -->
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center renuitt">
+          <!-- Banner Image -->
+          <img
+            src="images/renuitt-bar.webp"
+            data-src="images/renuitt-bar.webp"
+            alt="Banner"
+            class="banner-image renuitt-bar lazy-load"
+          />
+        </div>
+      </div>
+    </section>
+    <div class="divider"><div></div></div>
+    <!-- Text Section Leading to Services -->
+    <section class="text-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+          <div class="cell small-12 medium-10">
+            <h2>{{ serviceMainTitle }}</h2>
+            <p>{{ serviceMainDescription }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"><div></div></div>
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="cell small-12">
+            <h2>Our Services</h2>
+          </div>
+          <!-- Service Item -->
+          {{ serviceMainList }}
+        </div>
+      </div>
+    </section>
+    <!-- Detailed Services Section -->
+    <section id="detailed-services" class="detailed-services-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+          <div class="cell small-9 medium-6 large-6">
+            <img
+              src="{{ detailedServiceImg }}"
+              alt="Roofing Services"
+              class="splash-image"
+            />
+            <p class="image-caption">{{ detailedServiceTitle }}</p>
+          </div>
+          <div class="cell small-11 medium-6 large-6">
+            <h3>{{ detailedServiceSubHeader }}</h3>
+            <p>{{ detailedServiceDescription }}</p>
+            <div class="grid-container">
+              <div class="grid-x grid-margin-x">
+                <div class="cell small-9 medium-6 large-6">
+                  <ul class="services-list">
+                    {{ detailedServiceList }}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <a href="#hero" class="button large">{{ mainCallToAction }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="banner-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center renuitt">
+          <!-- Banner Image -->
+          <img
+            src="images/homestars-banner.webp"
+            data-src="images/homestars-banner.webp"
+            alt="Banner"
+            class="banner-image renuitt-bar lazy-load"
+          />
+        </div>
+      </div>
+    </section>
+    <div class="divider"><div></div></div>
+    <section id="video" class="video-section text-center">
+      <h2>{{ videoTestimonial }}</h2>
+      <p class="lead">{{ videoTestimonialName }}</p>
+      <div class="video-box">
+        <div
+        class="youtube-video-placeholder"
+        id="youtube-video-placeholder"
+        style="
+          background-image: url('images/maxresdefault.jpg');
+        "
+      >
+        <img
+          class="play-button"
+          src="images/playButton.png"
+          alt="Play"
+        />
+      </div>
+      <script>
+        document
+          .getElementById("youtube-video-placeholder")
+          .addEventListener("click", function () {
+            this.innerHTML =
+              '<iframe width="100%" height="100%" src="{{ videoTestimonialLink }}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+          });
+      </script>
+    </div>
+      </div>
+    </section>
+    <div class="divider"><div></div></div>
+    <section id="survey" class="survey-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center survey-box">
+          <div class="cell small-12 medium-8 text-center">
+            <h2>{{ surveyTitle }}</h2>
+            <p class="lead">{{ surveyDescription }}</p>
+            <div class="steps">{{ surveySteps }}</div>
+            <a href="#hero" class="button large cta-button"
+              >{{ mainCallToAction }}</a
+            >
+            <p class="phone-number">
+              Call For An Instant Quote:
+              <strong
+                ><a href="tel:{{ companyPhone }}">{{ companyPhone }}</a></strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="gallery-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center text-center">
+          <div class="cell small-9">
+            <h2>{{ galleryTitle }}</h2>
+            <div class="gallery-grid">{{ galleryImages }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"><div></div></div>
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+          <div class="cell small-12">
+            <h2>What Our Customers Have to Say</h2>
+          </div>
+          {{ reviews }}
+        </div>
+      </div>
+    </section>
+    <!-- Why Work With Us Section -->
+    <section id="why-us" class="why-us-section">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+          <div class="cell small-12 medium-10 large-8">
+            <h2>Why Work With {{ companyName }}</h2>
+            <ul class="why-us-list">
+              <li>
+                Continuous Progress Reports - During our engagements, our team
+                will work closely with you to ensure you are informed of the
+                progress and to discuss key factors of the work being
+                undertaken.
+              </li>
+              <li>
+                Long Term Guarantees On Work & Products - All our work and
+                materials come with long term guarantees providing you with
+                peace of mind for years to come.
+              </li>
+              <li>
+                Professionally Trained & Qualified Experts - All our teams are
+                professionally trained, making sure you receive the highest
+                quality workmanship throughout your roofing project.
+              </li>
+              <li>
+                Highest Quality At Affordable Prices - We provide you with
+                different pricing options and finance plans to suit your budget
+                and are always transparent with all costs involved.
+              </li>
+            </ul>
+            <div class="text-center">
+              <div class="call-to-action">
+                <p class="lead">{{ mainCallToActionType }}</p>
+                <a href="#hero" class="button large">{{ mainCallToAction }}</a>
+                <p class="phone-number">
+                  Call For An Instant Quote:
+                  <a href="tel:{{ companyPhone }}">{{ companyPhone }}</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Check Mark Banner 2 -->
+    <div class="banner-section2">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="cell small-12">
+            <ul class="banner-notes">
+              <li class="cell small-3">Fully Trained.</li>
+              <li class="cell small-3">100% Guarantee.</li>
+              <li class="cell small-3">No hidden charges.</li>
+              <li class="cell small-3">We clean up after the job.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="final-cta" class="final-cta-section">
+      <div class="grid-container final-cta-glass">
+        <div class="grid-x grid-margin-x align-center">
+          <div class="cell small-12">
+            <!-- Customer Satisfaction and CTA -->
+            <div class="customer-satisfaction-cta text-center">
+              <div class="grid-x grid-padding-x align-middle satisfaction-box">
+                <div class="cell small-12 text-center">
+                  <h2>{{ mainCallToActionType }}</h2>
+                  <p class="lead">
+                    Tell us what you need and we'll tailor a solution just for
+                    you!
+                  </p>
+                  <a href="#contact" class="button large cta-button">
+                    {{ mainCallToAction }}
+                  </a>
+                  <p class="phone-number">
+                    Or call us for a consultation:
+                    <strong>
+                      <a href="tel:{{ companyPhone }}">{{ companyPhone }}</a>
+                    </strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial Section Simplified -->
+            <div class="testimonial">
+              <div class="review-box">
+                <div class="cell small-12 medium-6 large-4">
+                  <div class="review-item callout">
+                    <div class="grid-container">
+                      <div class="grid-x grid-margin-x align-top">
+                        <div class="cell small-12">
+                          <div class="rating-box">
+                            <p class="review-stars">{{ reviewHeroStars }}</p>
+                            <p class="review-rating">
+                              Rated {{ reviewHeroRating }}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review-highlight">"{{ finalCtaReview }}"</p>
+                    <p class="review-author">{{ finalCtaName }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Privacy Modal -->
+    <div id="privacyPolicyModal" class="privacyPolicy">
+      <h2>Privacy Policy & Disclaimer</h2>
+      <p>
+        This Privacy Policy outlines how your information is collected, used,
+        andprotected when you use our services. Importantly, we want you to know
+        that wedo not use cookies or any tracking IDs unrelated to Google's
+        services. We only collect personal information after you submit it to us
+        through our forms. This practice ensures we can reach out to you
+        regarding your inquiry in a respectful and purposeful manner.
+      </p>
+
+      <h3>Information Collection</h3>
+      <p>
+        We collect information from you only when you register on our site,
+        placean order, subscribe to our newsletter, or fill out a form. This
+        direct approach to information collection ensures that your data is not
+        collected without your consent.
+      </p>
+
+      <h3>Information Use</h3>
+      <p>
+        The information we collect is used solely to personalize your
+        experience,improve our website, enhance customer service, and to process
+        transactions, including reaching out to you about your inquiries as
+        mentioned.
+      </p>
+
+      <h3>Information Protection</h3>
+      <p>
+        We implement a variety of security measures to maintain the safety of
+        your personal information. These measures are designed to protect your
+        data from unauthorized access, alteration, and misuse.
+      </p>
+      <h3>EU General Data Protection Regulation (GDPR)</h3>
+      <p>
+        We are committed to complying with the GDPR and ensuring the protection
+        and security of personal information belonging to EU citizens. This
+        includes your rights to access, correct, delete, and restrict the
+        processing of your data. We will also take steps to ensure that the
+        personal information we collect is accurate, complete, and up to date.
+      </p>
+
+      <p>
+        For EU residents, in the event of any concerns or complaints about your
+        privacy rights, you have the right to contact the data protection
+        authority in your country of residence.
+      </p>
+
+      <h3>Online Dispute Resolution (ODR)</h3>
+      <p>
+        For EU residents, if you have a complaint about our use of your
+        information, you also have the right to submit a complaint to the
+        European Commission’sOnline Dispute Resolution (ODR) platform at
+        <a
+          href="http://ec.europa.eu/consumers/odr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >http://ec.europa.eu/consumers/odr/</a
+        >. The ODR platform is a web-based platform that is designed to help
+        consumers who have bought goods or services online, and subsequently
+        have a problem with that online purchase.
+      </p>
+      <div class="divider"><div></div></div>
+      <div class="legalDisclaimer">
+        <p>
+          © 2024, L.F. Builders Inc. All Rights Reserved, All Wrongs Reversed.
+        </p>
+
+        <p><strong>IMPORTANT: Earnings and Legal Disclaimers</strong></p>
+
+        <p>
+          This site is not part of, or endorsed by, Facebook™, Google™,
+          LinkedIn™, Snapchat™, Twitter™ or any social media platform in any
+          way. All trademarks belong to their respective owners. Use of these
+          names, logos, and brands does not imply endorsement.
+        </p>
+
+        <p>
+          All information provided is for educational and informational purposes
+          only. Use caution and seek the advice of qualified professionals.
+          Check with your attorney, accountant, or professional advisor before
+          acting on this or any information.
+        </p>
+
+        <p>
+          The information on this website and provided from or through this
+          websiteis general in nature and is not specific to you or anyone else.
+          Decisions based on this information are for your own account and risk.
+        </p>
+
+        <p>
+          The rules, regulations, and laws concerning credit cards differ by
+          state and country. Be sure to read everything and provide truthful
+          information on applications. You are obligated to follow the terms of
+          the credit card agreement.
+        </p>
+
+        <p>
+          Users of our products, services, and website are advised to do their
+          own due diligence. Our information should be independently verified by
+          your own qualified professionals. You agree that Re-Nuitt Builders
+          Inc. is not responsible for the success or failure of your decisions
+          relating to any information presented by our company or our company
+          products or services.
+        </p>
+      </div>
+
+      <p>
+        For further information,
+        <a href="https://lfbuilders.ca/">please contact us.</a>
+      </p>
+      <button
+        class="privacyPolicyCloseButton"
+        data-close
+        aria-label="Close modal"
+        type="button"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div id="loader-wrapper" style="display: none">
+      <div id="loader"></div>
+    </div>
+    <div class="floating-action-button">
+      <a href="#hero" class="button">↑</a>
+    </div>
+    <footer class="footer-section">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x align-middle">
+          <div class="cell large-auto text-left">
+            <p>&copy; 2024 <a href="https://garrettstimpson.ca">gary23</a> MIT.</p>
+          </div>
+          <div class="cell large-auto text-right">
+            <p>
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage"
+                target="_blank"
+                class="odr-link"
+                >EU Online Dispute Resolution</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

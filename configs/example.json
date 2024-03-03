@@ -1,0 +1,168 @@
+[
+  {
+    "companyName": "LF Builders",
+    "name": "General Contractor Toronto, Kitchener, Waterloo | LF Builders",
+    "homeWebsite": "https://lfbuilders.ca/",
+    "websiteEndpoint": "https://eavestrough.lfbuilders.ca",
+    "trustpilot_url": "eavestrough.lfbuilders.ca",
+    "websiteThemeColor": "#c5c4c4",
+    "websiteButtonColor": "#a4a1a1",
+    "websiteButtonBorderColor": "#000",
+    "websiteLiStartColor": "rgba(163, 163, 163, 0.9)",
+    "websiteLiEndColor": "rgba(195, 195, 195, 0.6)",
+    "buildStylePattern": "1,2,3,4,5,6,7,8,9",
+    "manifest_details": [
+      {
+        "name": "L.F. Builders Eavestrough Page",
+        "icons": [
+          {
+            "src": "image/icons/gary23w.ico",
+            "type": "image/png",
+            "sizes": "512x512"
+          }
+        ],
+        "background_color": "#ffffff",
+        "theme_color": "#20a7ad"
+      }
+    ],
+    "compressWebp": "true",
+    "useThirdParty": "false",
+    "googleTagId": "GOOGLE-ADS-ID-CURRENTLY-REMOVED-FOR-LOADING-OPTIMIZATION",
+    "companyLogo": "images/logo.png",
+    "og_image": "images/stock/hero1.jpeg",
+    "og_description": "LF Builders is your trusted partner for all your construction and roofing needs in Toronto, Kitchener, and Waterloo. Expert services with a 100% satisfaction guarantee.",
+    "splashWelcome": "Welcome to LF Builders",
+    "mainCallToAction": "Get My Free Quote",
+    "mainCallToActionType": "Get Your FREE Roofing Quote",
+    "companyPhone": "1-800-675-1055",
+    "titleHero": "Expert Renovation Company in Toronto",
+    "subTitleHero": "Toronto's #1 trusted renovation company specializing in full roof replacements & new roofs for all types of properties.",
+    "reviewHeroStars": "★★★★★",
+    "reviewHeroRating": "5/5",
+    "reviewHeroDescription": "We have used LF Builders for multiple jobs and have always had an excellent experience. Gary and the boys are very professional. The work has been done in a timely manner and cleanup has been great.",
+    "reviewHeroName": "Jane from Brampton",
+    "heroFormTitle": "Get a FREE Consultation & Roofing Quotation",
+    "heroFormQualify": "What roofing works do you need doing?",
+    "serviceMainTitle": "Fully Certified, Reliable & Honest Roofing Company With A Fully Guaranteed Service",
+    "serviceMainDescription": "We're a locally run business that have a reputation for high-quality work, fair pricing and a friendly team.",
+    "serviceMainList": [
+      {
+        "img": "images/stock/new_roof.jpeg",
+        "title": "New ROOFS",
+        "description": "We offer a wide range of new roof options to suit your specific requirements and budget."
+      },
+      {
+        "img": "images/stock/roof-replace.jpg",
+        "title": "Roof Replacement",
+        "description": "We can replace your old roof with a new one that will last for many years to come."
+      },
+      {
+        "img": "images/stock/re-roof.jpg",
+        "title": "Re-Roofing",
+        "description": "We can re-roof your property with a new roof that will last for many years to come."
+      },
+      {
+        "img": "images/stock/roof-survey.jpeg",
+        "title": "Roof Surveys",
+        "description": "We can carry out a full survey of your roof to identify any issues and provide a full report."
+      }
+    ],
+    "detailedServiceImg": "images/stock/new_roof.jpeg",
+    "detailedServiceTitle": "We can help with any roof",
+    "detailedServiceSubHeader": "We Can Help With Any Roof",
+    "detailedServiceDescription": "We carry out a free no obligation survey of your property and roof. Our qualified team will inspect your roof provide you with a competitive quotation and roofing plan detailing the recommended work to be carried out.",
+    "detailedServiceList": [
+      "Roof Installation",
+      "New Roofs",
+      "Flat Roofs",
+      "Pitched Roofs",
+      "Valleys",
+      "Roofline",
+      "Cladding",
+      "Leadwork",
+      "Skylights",
+      "Roof Windows"
+    ],
+    "videoTestimonial": "Very happy customer.",
+    "videoTestimonialName": "Linda from Toronto",
+    "videoTestimonialLink": "https://youtube.com/embed/I95eWVsUBsg?si=F9iABJJsL1P6iKF1",
+    "surveyBackground": "images/stock/roof-survey.jpeg",
+    "surveyTitle": "Get A FREE Survey & Roofing Quote",
+    "surveyDescription": "Tell us what you need and we'll send you a custom quotation!",
+    "surveySteps": [
+      {
+        "title": "1",
+        "description": "Call Us Or Fill Out The Form On This Page"
+      },
+      {
+        "title": "2",
+        "description": "Arrange Free Survey & Quotation"
+      },
+      {
+        "title": "3",
+        "description": "We'll Provide You With A Competitive Quote"
+      }
+    ],
+    "galleryTitle": "Project Gallery",
+    "galleryTheme": "roofing",
+    "galleryImages": [
+      {
+        "img": "images/stock/gallery1.jpeg",
+        "alt": "New Roof"
+      },
+      {
+        "img": "images/stock/gallery2.jpeg",
+        "alt": "Roof Replacement"
+      },
+      {
+        "img": "images/stock/gallery3.jpg",
+        "alt": "Re-Roofing"
+      },
+      {
+        "img": "images/stock/gallery4.jpeg",
+        "alt": "Roof Survey"
+      },
+      {
+        "img": "images/stock/gallery5.jpg",
+        "alt": "Roof Installation"
+      },
+      {
+        "img": "images/stock/gallery6.jpg",
+        "alt": "Flat Roof"
+      },
+      {
+        "img": "images/stock/gallery7.jpeg",
+        "alt": "Pitched Roof"
+      },
+      {
+        "img": "images/stock/gallery8.jpg",
+        "alt": "Valleys"
+      }
+    ],
+    "reviews": [
+      {
+        "stars": "★★★★★",
+        "rating": "5/5",
+        "description": "Sam and the team at LF Builders did an amazing job tearing down all of our existing eavestrough and replacing it with new eavestrough and fascia. The work was done quickly (less than a day), it has been very effective so far, and looks great. Clean up was thorough as well.",
+        "name": "Evan in Kitchener"
+      },
+      {
+        "stars": "★★★★★",
+        "rating": "5/5",
+        "description": "Frank and the rest of the crew did an amazing job. The went above and beyond are expectations. Would highly recommend LF Builders to anyone and to share my experiences with them.",
+        "name": "Brian in London"
+      },
+      {
+        "stars": "★★★★★",
+        "rating": "5/5",
+        "description": "LF Builders did an amazing job tearing down our entire existing eavestrough and replacing it with all new eavestrough. The work done looks excellent and very well thought out to make the system drain more efficiently.",
+        "name": "Mike Boht in Waterloo"
+      }
+    ],
+    "finalCtaImage": "images/stock/re-roof.jpg",
+    "finalCtaReviewStars": "★★★★★",
+    "finalCtaRating": "5/5",
+    "finalCtaReview": "LF Builders originally refinished my front patio and walk way. I absolutely love the look and the workers were very polite and hard working. The recent work is 2 concrete gardens, one with soil, one with beach pebbles. Great work!",
+    "finalCtaName": "Sandra in Toronto"
+  }
+]

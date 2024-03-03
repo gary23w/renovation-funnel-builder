@@ -1,0 +1,7 @@
+_pgbackup
+_pginfo
+pinegrow.json
+projectdb.pgml
+videos/*
+symon/*
+prod/*
