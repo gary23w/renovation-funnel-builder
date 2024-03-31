@@ -2,6 +2,8 @@
 class GarySendInBlue
 {
     private $maillist = ["YOUR@EMAIL.HERE"]; // test
+
+    //determine spam in the mailserver with AI
     function __construct(
         string $name,
         string $email,

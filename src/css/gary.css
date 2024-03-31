@@ -1,3 +1,5 @@
+/* a base style sheet for a simple website */
+/* handcrafted by yours truly, @gary23w */
 @charset "UTF-8";
 :root {
   --primary-color: #000;
@@ -1152,7 +1154,7 @@ ul.no-bullet {
   padding: 2rem 0;
 }
 .text-section h2 {
-  font-size: 30px;
+  font-size: 40px;
 }
 .text-section p {
   font-size: 1rem;

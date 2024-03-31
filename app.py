@@ -75,7 +75,7 @@ class TemplateLoader:
                     if 'li-background-end' in property.name:
                         property.value = li_end_color
                     
-        prod_css_dir = 'prod/src/css'
+        prod_css_dir = 'prod/funnel/src/css'
         os.makedirs(prod_css_dir, exist_ok=True)
         with open(f'{prod_css_dir}/gary.css', 'w') as file:
             file.write(sheet.cssText.decode('utf-8'))
@@ -93,7 +93,7 @@ class TemplateLoader:
         return loader_map.get(key, DefaultLoader())
 
     def _save_rendered_template(self):
-        with open("prod/index.html", "w") as file:
+        with open("prod/funnel/index.html", "w") as file:
             file.write(self.template)
 
     def convert_images_to_webp(self, image_directory):
@@ -111,7 +111,7 @@ class TemplateLoader:
 
     def build_web_manifest(self):
         manifest_details = self.config[0].get("manifest_details", [{}])[0]
-        with open("prod/manifest.json", "w") as manifest_file:
+        with open("prod/funnel/manifest.json", "w") as manifest_file:
             json.dump(manifest_details, manifest_file, indent=2)
 
     def generate_sitemap(self):
@@ -130,7 +130,7 @@ class TemplateLoader:
 
         sitemap_content += "</urlset>"
 
-        with open("prod/sitemap.xml", "w") as sitemap_file:
+        with open("prod/funnel/sitemap.xml", "w") as sitemap_file:
             sitemap_file.write(sitemap_content)
 
 class ContentLoader:
@@ -232,8 +232,19 @@ def empty_prod():
                     shutil.rmtree(file_path)
             except Exception as e:
                 logging.error(f'Failed to delete {file_path}. Reason: {e}')
+    elif os.path.exists('prod/funnel/'):
+        for filename in os.listdir('prod/funnel/'):
+            file_path = os.path.join('prod/funnel/', filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                logging.error(f'Failed to delete {file_path}. Reason: {e}')
     else:
         os.makedirs('prod/')
+        os.makedirs('prod/funnel/')
 
 def copy_directory(src, dest):
     shutil.copytree(src, dest, dirs_exist_ok=True)
@@ -273,12 +284,16 @@ if __name__ == "__main__":
 
     logging.info("[*] Building dir structure for prod/")
 
-    copy_directory('src/scripts', 'prod/src/scripts')
+    copy_directory('src/scripts', 'prod/funnel/src/scripts')
 
-    copy_files_from_directory('utils', 'prod')
+    copy_files_from_directory('utils', 'prod/funnel')
 
-    copy_directory('images', 'prod/images')
+    copy_directory('images', 'prod/funnel/images')
 
-    copy_directory('videos', 'prod/videos')
+    copy_directory('contact', 'prod/funnel/contact')
+
+    # copy_directory('videos', 'prod/videos') # host videos on a separate server(youtube). this can cause performance issues.
+
+    copy_files_from_directory('build', 'prod/')
 
     logging.info("[*] Site build complete, and directories copied to prod/")
